@@ -48,7 +48,7 @@ autoPlayBtn.addEventListener("click", () => {
     autoPlayTimer = setInterval(() => {
     const randomPick = choices[Math.floor(Math.random() * choices.length)];
     playRound(randomPick);
-  }, 5000);
+  }, 1000);
   autoPlayBtn.innerText = "Stop";
   }
 });
