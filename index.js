@@ -93,6 +93,10 @@ document.addEventListener("keydown", (e) => {
     playRound("paper");
   } else if (e.key === "s" || e.key === "S") {
     playRound("scissors");
+  } else if (e.key === "a" || e.key === "A"){
+    autoPlayBtn.click();
+  } else if(e.key === " "){
+    resetBtn.click();
   }
 });
 
