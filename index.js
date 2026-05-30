@@ -38,6 +38,7 @@ const rockBtn = document.querySelector("#rockBtn");
 const paperBtn = document.querySelector("#paperBtn");
 const scissorsBtn = document.querySelector("#scissorsBtn");
 const resetBtn = document.querySelector("#resetBtn");
+
 const autoPlayBtn = document.querySelector("#autoPlayBtn");
 autoPlayBtn.addEventListener("click", () => {
   if (autoPlayTimer) {
@@ -52,6 +53,7 @@ autoPlayBtn.addEventListener("click", () => {
   autoPlayBtn.innerText = "Stop";
   }
 });
+
 const playerChoice = document.querySelector("#playerChoice");
 const computerChoice = document.querySelector("#computerChoice");
 const gameResult = document.querySelector("#result");
@@ -103,7 +105,9 @@ document.addEventListener("keydown", (e) => {
 rockBtn.addEventListener("click", () => playRound("rock"));
 paperBtn.addEventListener("click", () => playRound("paper"));
 scissorsBtn.addEventListener("click", () => playRound("scissors"));
+
 resetBtn.addEventListener("click", () => {
+  if (confirm("Are you sure you want to reset score?")) {
   score.wins = 0;
   score.losses = 0;
   score.ties = 0;
@@ -116,4 +120,5 @@ resetBtn.addEventListener("click", () => {
   gameResult.innerText = "Make your move!";
   gameResult.classList.remove("win", "lose", "tie");
   localStorage.removeItem("score");
+  }
 });
